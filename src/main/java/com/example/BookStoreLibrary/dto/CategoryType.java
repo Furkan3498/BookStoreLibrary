@@ -1,5 +1,9 @@
 package com.example.BookStoreLibrary.dto;
 
+
+import lombok.Getter;
+
+@Getter
 public enum CategoryType {
 
     RESEARCH_HISTORY("ARASTIRMACI- Tarih"),

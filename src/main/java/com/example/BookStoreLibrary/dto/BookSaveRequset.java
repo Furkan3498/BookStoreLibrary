@@ -4,6 +4,9 @@ import com.example.BookStoreLibrary.model.BookStatus;
 import com.example.BookStoreLibrary.model.Category;
 import com.example.BookStoreLibrary.model.Image;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -16,13 +19,25 @@ import java.io.File;
 @Getter
 @Builder
 public class BookSaveRequset {
-    private Long bookId;
+
+
+    //@NotBlank @NotNull  @NotEmpty
+    @NotEmpty
+    @NotBlank
     private String title;
+    @NotBlank
     private String authorName;
+    @NotNull
     private BookStatus bookStatus;
+    @NotBlank
     private String publisher;
+    @NotNull
     private Integer lastPageNumber;
+
     private File image;
-    private Integer totalPage;
+    @NotNull
     private Long categoryId; //category yerine
+    @NotNull
+    private Integer totalPage;
+
 }
