@@ -30,25 +30,27 @@ public class BookSaveService {
 //transactional çalışması için metodun private değil public olması gerekiyor. Çünkü transactional çalışırken metodu overide ediyor.
 //aspectleri kullandığımız yerde metodların private olması gerekiyor
     public BookListItemReponse saveBook(BookSaveRequset saveBookRequest) {
-        Category category = categoryService.loadCategory(saveBookRequest.getCategoryId());
+        //      Category category = categoryService.loadCategory(saveBookRequest.getCategoryId());
 
 
         Book book = new Book();
         book.setLastPageNumber(saveBookRequest.getLastPageNumber());
         book.setTitle(saveBookRequest.getTitle());
-        book.setCategory(category);
+      //  book.setCategory(category);
         book.setBookStatus(saveBookRequest.getBookStatus());
         book.setAuthorName(saveBookRequest.getAuthorName());
         book.setTotalPage(saveBookRequest.getTotalPage());
+        book.setPublisher(saveBookRequest.getPublisher());
         final Book fromDb = bookRepository.save(book);
         return BookListItemReponse.builder()
-                .categoryName(fromDb.getCategory().getName())
+                //       .categoryName(fromDb.getCategory().getName())
                 .id(fromDb.getId())
                 .bookStatus(fromDb.getBookStatus())
                 .publisher(fromDb.getPublisher())
                 .authorName(fromDb.getAuthorName())
                 .totalPage(fromDb.getTotalPage())
                 .lastPageNumber(fromDb.getLastPageNumber())
+                .title(fromDb.getTitle())
                 .build();
 
 

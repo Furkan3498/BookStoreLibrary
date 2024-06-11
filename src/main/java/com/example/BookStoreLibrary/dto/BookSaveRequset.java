@@ -22,7 +22,7 @@ public class BookSaveRequset {
 
 
     //@NotBlank @NotNull  @NotEmpty
-    @NotEmpty
+
     @NotBlank
     private String title;
     @NotBlank
@@ -35,8 +35,8 @@ public class BookSaveRequset {
     private Integer lastPageNumber;
 
     private File image;
-    @NotNull
-    private Long categoryId; //category yerine
+   // @NotNull
+    //private Long categoryId; //category yerine
     @NotNull
     private Integer totalPage;
 

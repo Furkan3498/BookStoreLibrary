@@ -29,9 +29,9 @@ public class BookListService {
         this.bookRepository = bookRepository;
     }
 
-    public List<BookResponse> listBooks(int size , int page){
+    public List<BookResponse> listBooks(int size, int page) {
 
-        return bookRepository.findAll(PageRequest.of(page,size))
+        return bookRepository.findAll(PageRequest.of(page, size))
                 .getContent()
                 .stream()
                 .map(BookListService::convertResponse)
@@ -39,7 +39,7 @@ public class BookListService {
 
     }
 
-    private static BookResponse convertResponse(Book model){
+    private static BookResponse convertResponse(Book model) {
 
         return BookResponse.builder()
                 .authorName(model.getAuthorName())
@@ -49,7 +49,7 @@ public class BookListService {
     }
 
 
-    public List<BookResponse> searchByCategory(CategoryType categoryType){
+    public List<BookResponse> searchByCategory(CategoryType categoryType) {
 
         final Category category = categoryService.findByName(categoryType.getValue());
         return category.getBooks()
@@ -58,10 +58,10 @@ public class BookListService {
                 .collect(Collectors.toList());
     }
 
-    public List<BookResponse> searchBookStatus(BookStatus bookStatus){
+    public List<BookResponse> searchBookStatus(BookStatus bookStatus) {
 
 
-    return     bookRepository.findByBookStatus(bookStatus)
+        return bookRepository.findByBookStatus(bookStatus)
                 .stream()
                 .map(each ->
                         BookResponse.builder()
@@ -73,73 +73,17 @@ public class BookListService {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public List<BookResponse> searchBookTitle(String title) {
+
+
+        return bookRepository.findByTitle(title)
+                .stream()
+                .map(each ->
+                        BookResponse.builder()
+                                .id(each.getId())
+                                .imageURL(each.getImage().getImageURL())
+                                .build()
+
+                ).collect(Collectors.toList());
+    }
 }

@@ -5,6 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_id")
 public class User extends BaseEntity{
 }
