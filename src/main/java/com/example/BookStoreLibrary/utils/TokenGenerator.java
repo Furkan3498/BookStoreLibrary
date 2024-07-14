@@ -22,7 +22,7 @@ public class TokenGenerator {
 
 
     @Value("${jwt-variables.EXPIRES_ACCESS_TOKEN_MINUTES}")
-    private Integer EXPIRES_ACCESS_TOKEN_MINUTES;
+    private long EXPIRES_ACCESS_TOKEN_MINUTES;
 
 
     public String generateToken(Authentication authentication){
