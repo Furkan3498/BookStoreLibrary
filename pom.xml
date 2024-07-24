@@ -14,7 +14,7 @@
 	<name>BookStoreLibrary</name>
 	<description>Book Store Library or Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
