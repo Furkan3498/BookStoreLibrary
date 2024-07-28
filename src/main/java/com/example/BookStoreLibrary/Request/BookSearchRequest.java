@@ -1,4 +1,4 @@
-package com.example.BookStoreLibrary.dto;
+package com.example.BookStoreLibrary.Request;
 
 
 import lombok.Getter;

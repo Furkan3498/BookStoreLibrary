@@ -33,8 +33,6 @@ public class SecurityConfig {
     }
 
 
-
-
     @Bean
     public AuthenticationManager authenticationManager(final AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
@@ -54,8 +52,8 @@ public class SecurityConfig {
                 })
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(httpBasic -> httpBasic.disable())
-                .authenticationManager((AuthenticationManager) authenticationEntryPoint)// look again! there are be wrong
                 .exceptionHandling(exp -> exp.accessDeniedHandler(jwtAccessDeniedHandler))
+                .authenticationManager((AuthenticationManager) authenticationEntryPoint)// look again! there are be wrong
 
                 .sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

@@ -1,4 +1,4 @@
-package com.example.BookStoreLibrary.dto;
+package com.example.BookStoreLibrary.Request;
 
 import com.example.BookStoreLibrary.model.BookStatus;
 import com.example.BookStoreLibrary.model.Category;

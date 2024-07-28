@@ -1,5 +1,6 @@
-package com.example.BookStoreLibrary.dto;
+package com.example.BookStoreLibrary.Request;
 
+import com.example.BookStoreLibrary.dto.UserRoleDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

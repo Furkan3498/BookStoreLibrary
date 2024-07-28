@@ -2,11 +2,9 @@ package com.example.BookStoreLibrary.service;
 
 
 import com.example.BookStoreLibrary.dto.BookListItemReponse;
-import com.example.BookStoreLibrary.dto.BookSaveRequset;
+import com.example.BookStoreLibrary.Request.BookSaveRequset;
 import com.example.BookStoreLibrary.model.Book;
-import com.example.BookStoreLibrary.model.Category;
 import com.example.BookStoreLibrary.repository.BookRepository;
-import com.example.BookStoreLibrary.repository.CategoryRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 

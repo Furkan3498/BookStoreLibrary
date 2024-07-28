@@ -1,7 +1,7 @@
 package com.example.BookStoreLibrary.Controller;
 
 
-import com.amazonaws.services.dynamodbv2.xspec.L;
+import com.example.BookStoreLibrary.Request.BookSaveRequset;
 import com.example.BookStoreLibrary.dto.*;
 import com.example.BookStoreLibrary.model.BookStatus;
 import com.example.BookStoreLibrary.service.BookListService;
@@ -43,16 +43,16 @@ public class BookRestController {
 
     @GetMapping("/list/{categoryType}")
     public ResponseEntity<List<BookResponse>> listByCategory(@PathVariable CategoryType categoryType){
-        return ResponseEntity.ok(this.bookListService.searchByCategory(categoryType));
+        return ResponseEntity.ok(bookListService.searchByCategory(categoryType));
     }
     @GetMapping("/list/{status}")
     public ResponseEntity<List<BookResponse>> listByCategory(@PathVariable BookStatus bookStatus){
-        return ResponseEntity.ok(this.bookListService.searchBookStatus(bookStatus));
+        return ResponseEntity.ok(bookListService.searchBookStatus(bookStatus));
     }
 
     @GetMapping("/list/{title}")
     public ResponseEntity<List<BookResponse>> listByCategory(@PathVariable String title){
-        return ResponseEntity.ok(this.bookListService.searchBookTitle(title));
+        return ResponseEntity.ok(bookListService.searchBookTitle(title));
 
 
 
