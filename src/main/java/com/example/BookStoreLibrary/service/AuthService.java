@@ -36,7 +36,7 @@ public class AuthService {
                             .userDto(userService.getUser(request.getUsername()))
                             .build();
             }catch (Exception e){
-                throw new UserNameNotFoundException("User details couldn't be found by following id : " );
+                throw new UserNameNotFoundException("User details couldn't be found by following id : " + request.getUsername() );
             }
 
     }
